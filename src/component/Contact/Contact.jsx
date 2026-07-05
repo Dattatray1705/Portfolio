@@ -41,15 +41,15 @@ const sendEmail = (e) => {
 
   emailjs
     .send(
-      "service_v7jh5k3",
-      "template_klm6b5g",
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
       },
-      "RSGfXQeYX-Wx-VHiW"
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then(() => {
       alert("Message sent successfully!");
@@ -61,14 +61,14 @@ const sendEmail = (e) => {
         message: "",
       });
 
-      setLoading(false); // ✅ Reset loading
+      setLoading(false);
     })
     .catch((error) => {
       console.error(error);
 
       alert("Failed to send message.");
 
-      setLoading(false); // ✅ Reset loading
+      setLoading(false);
     });
 };
 

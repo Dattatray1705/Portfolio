@@ -36,35 +36,24 @@ function Responsibilities() {
       <div className="responsibilities-grid">
 
         {responsibilities.map((item, index) => (
-
-          <motion.div
-            key={index}
-            className="responsibility-card"
-
-            initial={{
-              opacity: 0,
-              x: index % 2 === 0 ? -50 : 50,
-            }}
-
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-
-            transition={{
-              duration: 0.5,
-              delay: index * 0.08,
-            }}
-
-            viewport={{
-              once: true,
-            }}
-
-            whileHover={{
-              scale: 1.03,
-              y: -8,
-            }}
-          >
+<motion.div
+  key={index}
+  className="responsibility-card"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{
+    duration: 0.5,
+    delay: index * 0.05,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.2,
+  }}
+  whileHover={{
+    scale: 1.03,
+    y: -8,
+  }}
+>
 
             <div className="responsibility-icon">
 
