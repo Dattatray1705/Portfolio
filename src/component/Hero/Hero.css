@@ -212,3 +212,20 @@ height:250px;
 }
 
 }
+@media (max-width:991px){
+
+.hero-section .row{
+    display:flex;
+    flex-direction:column;
+}
+
+.hero-section .row > div:first-child{
+    order:2;
+}
+
+.hero-section .row > div:last-child{
+    order:1;
+    margin-bottom:30px;
+}
+
+}
