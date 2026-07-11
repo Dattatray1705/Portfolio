@@ -1,5 +1,5 @@
 import "./About.css";
-import profile from "../../assets/images/logo.png";
+import profile from "../../assets/images/logo.jpeg";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 

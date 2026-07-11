@@ -346,6 +346,7 @@ transform:translateY(0);
   width:120px;
     height:120px;
   border-radius: 50%;
+  
   background: var(--primary);
   color: white;
   display: flex;
@@ -367,7 +368,7 @@ transform:translateY(0);
 .footer-social {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 50px;
   margin: 30px 0;
 }
 
@@ -477,7 +478,7 @@ transform:translateY(0);
 }
 
 .profile-circle:hover {
-  transform: scale(1.05) rotate(2deg);
+  transform: scale(1.05);
   box-shadow: 0 15px 40px rgba(37, 99, 235, 0.45);
 }
 

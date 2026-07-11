@@ -3,7 +3,7 @@ import "./Contact.css";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.jpeg";
 
 import {
   FaEnvelope,
@@ -407,24 +407,20 @@ I'm currently open to Full Stack Developer internships and entry-level opportuni
 
 <footer className="portfolio-footer">
 
-<div className="footer-logo">
 
-<img src={logo} alt="Dattatray Savalkar" />
 
-</div>
 
-<h3>
 
-Dattatray Savalkar
 
-</h3>
+<div className="footer-line"></div>
 
-<p>
+<p className="copyright">
 
-Full Stack Developer
+© {new Date().getFullYear()} Dattatray Savalkar.
+<br />
+Built with ❤️ using React.js, Framer Motion & Bootstrap.
 
 </p>
-
 <div className="footer-social">
 
 <a
@@ -458,16 +454,6 @@ rel="noreferrer"
 </a>
 
 </div>
-
-<div className="footer-line"></div>
-
-<p className="copyright">
-
-© {new Date().getFullYear()} Dattatray Savalkar.
-<br />
-Built with ❤️ using React.js, Framer Motion & Bootstrap.
-
-</p>
 </footer>
 
 
