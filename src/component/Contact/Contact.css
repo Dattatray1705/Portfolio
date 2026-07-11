@@ -187,12 +187,18 @@
   cursor: pointer;
 }
 
+.send-btn{
+  margin-top: 50px;
+  margin-left: 120px;
+}
+
 .resume-btn:hover,
 .send-btn:hover,
 .cta-btn:hover {
   transform: translateY(-3px);
   opacity: .9;
 }
+
 
 /* =========================
    FORM
@@ -202,6 +208,7 @@
   position: relative;
   overflow: hidden;
   transition: all .4s ease;
+  height: 867px;
 }
 
 
@@ -214,11 +221,14 @@
   text-align: center;
   margin-bottom: 20px;
   
+  
 }
 
 .contact-form-card p {
   color: var(--text-secondary);
   margin-bottom: 30px;
+  font-size: large;
+  margin-bottom: 50px;
 }
 
 
@@ -231,6 +241,8 @@
   border-radius: 12px;
   padding: 15px;
   transition: .3s;
+  
+  
 }
 
 .contact-form-card .form-control::placeholder {
@@ -245,6 +257,7 @@
 
 textarea {
   resize: none;
+
 }
 
 

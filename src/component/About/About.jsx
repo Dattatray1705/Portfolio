@@ -1,17 +1,20 @@
 import "./About.css";
 import profile from "../../assets/images/logo.png";
-import resume from "../../assets/resume/resume.pdf";
-
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import {
   FaReact,
   FaNodeJs,
-  FaDownload,
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
   FaMapMarkerAlt,
   FaGraduationCap,
   FaBriefcase,
-  FaGithub,
+  FaJava,
+  FaHtml5,
+  FaCss3Alt,
 } from "react-icons/fa";
 
 import {
@@ -19,252 +22,245 @@ import {
   SiMongodb,
   SiJavascript,
   SiBootstrap,
-  SiGit,
   SiRedux,
+  SiGit,
+  SiTailwindcss,
+  SiMysql,
+  SiNextdotjs,
 } from "react-icons/si";
 
 function About() {
+
+  const positions = [
+  "Full Stack Developer",
+  "MERN Stack Developer",
+  "React Developer",
+  "Frontend Developer",
+  "Backend Developer",
+  "Software Developer",
+];
+
+const [currentPosition, setCurrentPosition] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentPosition((prev) => (prev + 1) % positions.length);
+  }, 2000); // Changes every 2 seconds
+
+  return () => clearInterval(interval);
+}, []);
+
+
   return (
     <section id="about" className="about-section">
-
-      {/* Background Blur */}
-
-      <div className="about-blur blur-left"></div>
-      <div className="about-blur blur-right"></div>
 
       <div className="container">
 
         {/* Heading */}
 
         <motion.div
-          className="text-center mb-5"
-          initial={{ opacity: 0, y: 70 }}
+          className="text-center"
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: .8 }}
+          transition={{ duration: 0.8 }}
         >
-
           <h2 className="section-title">
-
             About <span>Me</span>
-
           </h2>
 
           <p className="section-subtitle">
-
             Passionate Full Stack Developer who loves creating
             beautiful and scalable web applications.
-
           </p>
-
         </motion.div>
 
-        <div className="row align-items-center">
+        {/* Main Content */}
 
-          {/* LEFT */}
+        <motion.div
+          className="about-content"
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
 
-          <motion.div
-            className="col-lg-5 mb-5 mb-lg-0"
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: .9 }}
-          >
-
-            <div className="profile-card">
-
-              <div className="profile-ring">
-
-                <img
-                  src={profile}
-                  alt="Profile"
-                  className="profile-image"
-                />
-
-              </div>
-
-              <div className="experience-card">
-
-                <h2>2+</h2>
-
-                <p>Year Learning MERN</p>
-
-              </div>
-
-            </div>
-
-          </motion.div>
-
-          {/* RIGHT */}
+          {/* Profile Image */}
 
           <motion.div
-            className="col-lg-7"
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: .9 }}
+            className="profile-ring"
+            animate={{
+              y: [0, -15, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+            }}
           >
-
-            <h3 className="about-name">
-
-              Hi, I'm
-              <span> Dattatray Savalkar</span>
-
-            </h3>
-
-            <h5 className="about-role">
-
-            Full Stack Developer
-
-            </h5>
-
-            <p className="about-description">
-
-              I am a passionate Full Stack Developer with
-              experience building responsive, scalable and
-              user-friendly web applications.
-
-              I enjoy solving real-world problems using
-              React.js, Node.js, Express.js and MongoDB.
-
-              My goal is to continuously improve my skills
-              while building high-quality software.
-
-            </p>
-
-            {/* TECH STACK */}
-
-            <div className="tech-stack">
-
-              <span><FaReact /> React</span>
-
-              <span><FaNodeJs /> Node.js</span>
-
-              <span><SiExpress /> Express</span>
-
-              <span><SiMongodb /> MongoDB</span>
-
-              <span><SiJavascript /> JavaScript</span>
-
-              <span><SiBootstrap /> Bootstrap</span>
-
-              <span><SiRedux /> Redux</span>
-
-              <span><SiGit /> Git</span>
-
-              <span><FaGithub /> GitHub</span>
-
-            </div>
-
-            {/* COUNTERS */}
-
-            <div className="row mt-5 g-4">
-
-              <div className="col-md-4">
-
-                <motion.div
-                  className="stat-card"
-                  whileHover={{
-                    y: -10,
-                    scale: 1.03
-                  }}
-                >
-
-                  <h2>3</h2>
-
-                  <p>Projects</p>
-
-                </motion.div>
-
-              </div>
-
-              <div className="col-md-4">
-
-                <motion.div
-                  className="stat-card"
-                  whileHover={{
-                    y: -10,
-                    scale: 1.03
-                  }}
-                >
-
-                  <h2>10+</h2>
-
-                  <p>Technologies</p>
-
-                </motion.div>
-
-              </div>
-
-              <div className="col-md-4">
-
-                <motion.div
-                  className="stat-card"
-                  whileHover={{
-                    y: -10,
-                    scale: 1.03
-                  }}
-                >
-
-                  <h2>2</h2>
-
-                  <p>Internship</p>
-
-                </motion.div>
-
-              </div>
-
-            </div>
-
-            {/* PERSONAL INFO */}
-
-            <div className="personal-info">
-
-              <div>
-
-                <FaMapMarkerAlt />
-
-                Maharashtra, India
-
-              </div>
-
-              <div>
-
-                <FaGraduationCap />
-
-                B.Tech Graduate
-
-              </div>
-
-              <div>
-
-                <FaBriefcase />
-
-                Full Stack Developer Intern
-
-              </div>
-
-            </div>
-
-            {/* BUTTONS */}
-
-            <div className="about-buttons">
-
-
-              <a
-                href="#contact"
-                className="btn btn-outline-primary"
-              >
-
-                Contact Me
-
-              </a>
-
-            </div>
-
+            <img
+              src={profile}
+              alt="Profile"
+              className="profile-image"
+            />
           </motion.div>
 
-        </div>
+          {/* Name */}
+
+          <h2 className="about-name">
+            Dattatray <span>Savalkar</span>
+          </h2>
+
+          {/* Position */}
+
+         <motion.h4
+  key={currentPosition}
+  className="about-role"
+  initial={{ opacity: 0, y: 15 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
+  {positions[currentPosition]}
+</motion.h4>
+
+          {/* Description */}
+
+          <p className="about-description">
+  I'm a dedicated <strong>Full Stack MERN Developer</strong> with a passion
+  for building modern, responsive, and scalable web applications. My expertise
+  includes <strong>React.js, Next.js, Node.js, Express.js, MongoDB, JavaScript,</strong>
+  and RESTful APIs, enabling me to develop seamless user experiences and
+  efficient backend systems.
+  <br /><br />
+  I believe in writing clean, maintainable, and efficient code while following
+  industry best practices. Constant learning, problem-solving, and delivering
+  high-quality software drive me to grow as a developer and contribute to
+  innovative projects.
+</p>
+
+          {/* Contact Button */}
+
+          <div className="about-buttons">
+
+            <a
+              href="#contact"
+              className="btn btn-primary"
+            >
+              Contact Me
+            </a>
+
+          </div>
+
+          {/* Social Icons */}
+
+          <div className="social-icons">
+
+            <motion.a
+              href="https://github.com/Dattatray1705"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.2, y: -6 }}
+            >
+              <FaGithub />
+            </motion.a>
+
+            <motion.a
+              href="https://www.linkedin.com/in/dattatray-savalkar-687103416/"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.2, y: -6 }}
+            >
+              <FaLinkedin />
+            </motion.a>
+
+            <motion.a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=dattatraysavalkar1705@gmail.com"
+              whileHover={{ scale: 1.2, y: -6 }}
+            >
+              <FaEnvelope />
+            </motion.a>
+
+          </div>
+
+          {/* Tech Stack */}
+
+          <div className="tech-stack">
+
+  <span><FaHtml5 /> HTML5</span>
+
+  <span><FaCss3Alt /> CSS3</span>
+
+  <span><SiJavascript /> JavaScript</span>
+
+  <span><FaReact /> React</span>
+
+  <span><SiNextdotjs /> Next.js</span>
+
+  <span><FaNodeJs /> Node.js</span>
+
+  <span><SiExpress /> Express.js</span>
+
+  <span><SiMongodb /> MongoDB</span>
+
+  <span><FaJava /> Java</span>
+
+  <span><SiMysql /> SQL</span>
+
+  <span><SiBootstrap /> Bootstrap</span>
+
+  <span><SiTailwindcss /> Tailwind CSS</span>
+
+  <span><SiRedux /> Redux</span>
+
+  <span><SiGit /> Git</span>
+
+  <span><FaGithub /> GitHub</span>
+
+</div>
+
+          {/* Stats */}
+
+          <div className="stats-grid">
+
+            <motion.div
+              className="stat-card"
+              whileHover={{
+                y: -10,
+                scale: 1.05,
+              }}
+            >
+              <h2>3+</h2>
+              <p>Projects</p>
+            </motion.div>
+
+            <motion.div
+              className="stat-card"
+              whileHover={{
+                y: -10,
+                scale: 1.05,
+              }}
+            >
+              <h2>10+</h2>
+              <p>Technologies</p>
+            </motion.div>
+
+            <motion.div
+              className="stat-card"
+              whileHover={{
+                y: -10,
+                scale: 1.05,
+              }}
+            >
+              <h2>2+</h2>
+              <p>Years Learning</p>
+            </motion.div>
+
+          </div>
+
+          {/* Personal Info */}
+
+         
+
+        </motion.div>
 
       </div>
 

@@ -258,39 +258,7 @@ Kirloskarwadi, Sangli District, Maharashtra, India .
 
 </div>
 
-<div className="social-icons">
 
-<a
-href="https://github.com/Dattatray1705"
-target="_blank"
-rel="noreferrer"
->
-
-<FaGithub />
-
-</a>
-
-<a
-href="https://www.linkedin.com/in/dattatray-savalkar-687103416/"
-target="_blank"
-rel="noreferrer"
->
-
-<FaLinkedin />
-
-</a>
-
-<a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=dattatraysavalkar1705@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
->
-
-<FaEnvelope />
-
-</a>
-
-</div>
 
 
 
